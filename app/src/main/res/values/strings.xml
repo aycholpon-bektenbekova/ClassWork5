@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ClassWork5</string>
+    <string name="try_again">Try again</string>
+    <string name="no_internet_connection">No Internet connection</string>
+    <string name="playlist">playlist</string>
+    <string name="video_series">%d video series</string>
+</resources>
