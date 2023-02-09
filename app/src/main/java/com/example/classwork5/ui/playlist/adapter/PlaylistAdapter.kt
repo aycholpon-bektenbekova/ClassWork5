@@ -25,7 +25,11 @@ class PlaylistAdapter(private var onItemClick: KFunction1<Item, Unit>):
 
     fun setPlayList(list: List<Item>) {
         playlists.addAll(list)
-        notifyItemChanged(itemCount - 1)
+        notifyDataSetChanged()
+    }
+    fun setItemList(list: Item) {
+        playlists.addAll(list as ArrayList<Item>)
+        notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: PlaylistViewHolder, position: Int) {
@@ -38,7 +42,7 @@ class PlaylistAdapter(private var onItemClick: KFunction1<Item, Unit>):
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(playlists: Item) {
             if (playlists.snippet.thumbnails.maxres?.url != null)
-                Glide.with(binding.img).load(playlists.snippet.thumbnails.default.url)
+                Glide.with(binding.img).load(playlists.snippet.thumbnails.medium.url)
                     .into(binding.img)
             binding.videoCount.text = itemView.context.getString(
                 R.string.video_series,
@@ -46,7 +50,7 @@ class PlaylistAdapter(private var onItemClick: KFunction1<Item, Unit>):
             )
             binding.playlistName.text = playlists.snippet.title
             itemView.setOnClickListener {
-               onItemClick
+               onItemClick.invoke(playlists)
             }
         }
     }

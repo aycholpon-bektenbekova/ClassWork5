@@ -32,6 +32,11 @@ data class Item(
     val snippet: Snippet
 )
 
+data class PlaylistItem(
+    val kind: String,
+    val items: List<Item>
+)
+
 data class Localized(
     val description: String,
     val title: String

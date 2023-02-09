@@ -16,6 +16,7 @@
 
         <ImageView
             android:id="@+id/img"
+            android:scaleType="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@color/purple_200" />

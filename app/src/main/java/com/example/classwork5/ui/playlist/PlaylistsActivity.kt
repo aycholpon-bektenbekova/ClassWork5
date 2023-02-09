@@ -1,6 +1,7 @@
 package com.example.classwork5.ui.playlist
 
 import android.content.Intent
+import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.example.classwork5.base.BaseActivity
 import com.example.classwork5.databinding.ActivityPlaylistsBinding
@@ -9,10 +10,16 @@ import com.example.classwork5.ui.playlist.adapter.PlaylistAdapter
 import com.example.classwork5.ui.playlist.detail.DetailPlaylistActivity
 
 class PlaylistsActivity : BaseActivity<ActivityPlaylistsBinding, PlaylistsViewModel>() {
-    private var adapter = PlaylistAdapter(onItemClick = this::onItemClick)
+    private lateinit var adapter :PlaylistAdapter
+
 
     private var totalCount: Int = 1
     private lateinit var pageToken: String
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+          adapter = PlaylistAdapter(onItemClick = this::onItemClick)
+
+    }
     override fun inflateViewBinding(): ActivityPlaylistsBinding {
         return ActivityPlaylistsBinding.inflate(layoutInflater)
     }
@@ -26,15 +33,11 @@ class PlaylistsActivity : BaseActivity<ActivityPlaylistsBinding, PlaylistsViewMo
 
     }
 
-    override fun initView() {
-        super.initView()
-        binding.rvPlaylists.adapter = adapter
-    }
-
     private fun setPlaylist() {
         viewModel.playlists().observe(this) {
-            pageToken = it.nextPageToken
-            totalCount = it.pageInfo.totalResults
+
+            binding.rvPlaylists.adapter = adapter
+
             adapter.setPlayList(it.items)
 
         }
