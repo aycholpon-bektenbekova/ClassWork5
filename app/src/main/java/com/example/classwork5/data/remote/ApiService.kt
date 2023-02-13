@@ -1,8 +1,7 @@
-package com.example.classwork5.remote
+package com.example.classwork5.data.remote
 
-import com.example.classwork5.model.Item
-import com.example.classwork5.model.Playlist
-import com.example.classwork5.model.PlaylistItem
+import com.example.classwork5.data.remote.model.Playlists
+import com.example.classwork5.data.remote.model.PlaylistItem
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -15,9 +14,9 @@ interface ApiService {
         @Query("channelId") channelId: String,
         @Query("maxResults") maxResults: Int,
        // @Query("pageToken") pageToken : String?
-    ): Call<Playlist>
+    ): Call<Playlists>
     @GET("playlistItems")
-    fun getItemlists(
+    fun getItemLists(
         @Query("key") key: String ,
         @Query("part") part: String,
         @Query("channelId") channelId: String,

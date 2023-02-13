@@ -1,4 +1,4 @@
-package com.example.classwork5.ui.playlist.adapter
+package com.example.classwork5.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.classwork5.R
 import com.example.classwork5.databinding.PlaylistItemBinding
-import com.example.classwork5.model.Item
+import com.example.classwork5.data.remote.model.Item
 import kotlin.reflect.KFunction1
 
 class PlaylistAdapter(private var onItemClick: KFunction1<Item, Unit>):
@@ -27,7 +27,7 @@ class PlaylistAdapter(private var onItemClick: KFunction1<Item, Unit>):
         playlists.addAll(list)
         notifyDataSetChanged()
     }
-    fun setItemList(list: Item) {
+    fun setItemList(list: List<Item>) {
         playlists.addAll(list as ArrayList<Item>)
         notifyDataSetChanged()
     }

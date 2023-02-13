@@ -1,6 +1,7 @@
-package com.example.classwork5.remote
+package com.example.classwork5.core.network
 
 import com.example.classwork5.BuildConfig
+import com.example.classwork5.data.remote.ApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

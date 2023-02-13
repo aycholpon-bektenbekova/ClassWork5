@@ -1,4 +1,4 @@
-package com.example.classwork5.`object`
+package com.example.classwork5.utils
 
 object Constant {
     const val part = "snippet,contentDetails"

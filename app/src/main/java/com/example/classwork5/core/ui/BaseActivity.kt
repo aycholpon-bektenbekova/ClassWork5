@@ -1,4 +1,4 @@
-package com.example.classwork5.base
+package com.example.classwork5.core.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

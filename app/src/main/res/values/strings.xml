@@ -4,4 +4,6 @@
     <string name="no_internet_connection">No Internet connection</string>
     <string name="playlist">playlist</string>
     <string name="video_series">%d video series</string>
+    <string name="back">Back</string>
+    <string name="playlist2">Playlist</string>
 </resources>

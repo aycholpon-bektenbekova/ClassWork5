@@ -1,6 +1,6 @@
-package com.example.classwork5.model
+package com.example.classwork5.data.remote.model
 
-data class Playlist(
+data class Playlists(
     val kind: String?,
     val items: List<Item>,
     val etag: String,

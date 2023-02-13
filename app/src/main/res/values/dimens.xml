@@ -14,4 +14,5 @@
     <dimen name="margin4">4dp</dimen>
     <dimen name="text14">14sp</dimen>
     <dimen name="margin14">14dp</dimen>
+    <dimen name="height">29dp</dimen>
 </resources>
